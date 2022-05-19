@@ -8,7 +8,7 @@ services:
             context: .
             target: development
             dockerfile: ./Dockerfile
-        command: npm run start:debug
+        command: npm run start:debug 
         ports:
             - 3000:3000
             - 9229:9229
@@ -16,8 +16,8 @@ services:
             - nesjs-network
         volumes:
             - .:/usr/src/app
-            - /usr/src/app/node_modules
-        restart: unless-stopped
+            - /usr/src/app/node_modules 
+        restart: unless-stopped 
     prod:
         container_name: nestjs_api_prod
         image: nestjs-api-prod:1.0.0
