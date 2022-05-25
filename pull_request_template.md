@@ -18,9 +18,10 @@ Please select one or more options that applies for this PR from the following li
 - [ ] This change requires a documentation update
 
 ## Checklist before requesting a review
+
 - [ ] I have performed a self-review of my code.
 - [ ] I have added thorough tests as it is a core feature.
 
 ## Notes:
 
-Write any notes for Reviewer/Product Owners. 
+Write any notes for Reviewer/Product Owners.
