@@ -2,10 +2,14 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { getEnvPath } from './common/helper/env.helper';
-
-const envFilePath: string = getEnvPath(`${__dirname}/common/envs`);
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
+const envFilePath: string = path.join(
+  __dirname,
+  'common',
+  'envs',
+  `.env${process.env.NODE_ENV ? '.' + process.env.NODE_ENV : ''}`,
+);
 @Module({
   imports: [ConfigModule.forRoot({ envFilePath, isGlobal: true })],
   controllers: [AppController],
