@@ -1,5 +1,5 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+import { Inject, Injectable } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
 
 @Injectable()
 export class AppService {
@@ -7,6 +7,6 @@ export class AppService {
   public config: ConfigService;
 
   public getHello(): string {
-    return 'Hello World!';
+    return "Hello World!";
   }
 }
