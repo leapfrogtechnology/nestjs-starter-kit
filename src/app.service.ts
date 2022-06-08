@@ -7,6 +7,6 @@ export class AppService {
   public config: ConfigService;
 
   public getHello(): string {
-    return "Hello World!";
+    return "You are now in the HOME Route after the Login method !";
   }
 }
