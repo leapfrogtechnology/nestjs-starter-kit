@@ -7,6 +7,6 @@ export class AppService {
   public config: ConfigService;
 
   public getHello(): string {
-    return "You are now in the HOME Route after the Login method !";
+    return "Could you please check the Request Logged from global middleware?";
   }
 }
