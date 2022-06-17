@@ -7,6 +7,6 @@ export class AppService {
   public config: ConfigService;
 
   public getHello(): string {
-    return "Hello World!";
+    return "Could you please check the Request Logged from global middleware?";
   }
 }
