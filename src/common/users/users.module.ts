@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
-import { SpecificLogger } from "./middleware/specificLogger.Middleware";
+import { SpecificLogger } from "./middleware/specific-logger.middleware";
 import { UsersController } from "./users.controller";
 
 @Module({
