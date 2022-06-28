@@ -2,6 +2,7 @@ import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
+import { CatController } from "./cat.controller";
 import { Logger } from "./common/middleware/logger.middleware";
 import { UsersModule } from "./common/users/users.module";
 
@@ -16,7 +17,7 @@ const envFilePath: string = path.join(
 
 @Module({
   imports: [ConfigModule.forRoot({ envFilePath, isGlobal: true }), UsersModule],
-  controllers: [AppController],
+  controllers: [AppController, CatController],
   providers: [AppService],
 })
 export class AppModule implements NestModule {
