@@ -12,6 +12,10 @@ COPY . .
 
 RUN npm run build
 
+EXPOSE 8080
+
+CMD [ "node", "dist/main" ]
+
 FROM node:12.19.0-alpine3.9 as production
 
 ARG NODE_ENV=production
@@ -26,4 +30,7 @@ RUN npm install --only=production
 COPY . .
 
 COPY --from=development /usr/src/app/dist ./dist
+
+EXPOSE 8080
+
 CMD ["node", "dist/main"]
