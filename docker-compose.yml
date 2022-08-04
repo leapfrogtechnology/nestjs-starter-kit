@@ -11,10 +11,8 @@ services:
     command: npm run start:debug
     depends_on:
       - postgres
-    environment:
-      DATABASE_URL: postgres://user:pass@postgres:5432/db
-      NODE_ENV: development
-      PORT: 3000
+    env_file:
+      - ./src/common/envs/.env
     ports:
       - "8080:3000"
       - "9229:9229"
@@ -23,12 +21,10 @@ services:
     image: postgres:10.4
     ports:
       - "35000:5432"
-    environment:
-      POSTGRES_USER: xyz
-      POSTGRES_PASSWORD: xyz
-      POSTGRES_DB: db
+    env_file:
+      - ./src/common/envs/.env
 
     volumes:
-      - .:/usr/src/app
-      - ./node_modules:/usr/src/app/node_modules
+      - ./postgres-data:/var/lib/postgresql/data
+
     restart: unless-stopped
